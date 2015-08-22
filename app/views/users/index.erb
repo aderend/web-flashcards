@@ -1,3 +1,13 @@
-<div class="container">
-  <h1>hello there</h1>
-</div>
+
+  <%= erb :"/_header" %>
+    <div id="page" class="container">
+    <div id="content">
+      <h1>Your Stats</h1>
+    </div>
+     <div id="content">
+      <br>
+      <a href="/users/<%= session[:user][:id] %>/logout">Logout</a>
+    </div>
+    </div>
+  <%= erb :"/_footer" %>
+

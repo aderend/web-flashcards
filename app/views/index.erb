@@ -1,8 +1,10 @@
-<div class="container">
-  <h1>Flash Card Game</h1>
-  <% @decks.each do |deck| %>
-    <h3><%= deck.name %> : <%= deck.number_of_cards%> made by <%= deck.user_id %> </h3>
-  <% end %>
-</div>
-
-
+<%= erb :"/_header" %>
+    <div id="page" class="container">
+    <div id="content">
+       <h1>Flash Card Game</h1>
+        <% @decks.each do |deck| %>
+        <h3><%= deck.name %> : <%= deck.number_of_cards%> made by <%= deck.user_id %> </h3>
+        <% end %>
+    </div>
+  </div>
+<%= erb :"/_footer" %>
