@@ -1,2 +1,2 @@
-get '/user/:id' do
+get '/users/:id' do
 end
