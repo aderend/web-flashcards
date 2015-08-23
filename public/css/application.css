@@ -344,7 +344,7 @@ hr {
 
 #page
 {
-  height: 500px;
+  height: 80%;
   position: relative;
   overflow: hidden;
   padding: 6em 0em 5em 0em;
@@ -526,6 +526,7 @@ hr {
 
   #footer-wrapper
   {
+    height: 50px;
     overflow: hidden;
     padding: 5em 0em;
     background: #1E1B1A;
