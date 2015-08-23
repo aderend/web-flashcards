@@ -1,8 +1,11 @@
 <%= erb :"/_header" %>
     <div id="page" class="container">
     <div id="content">
-      <h1>score <%= @round.score %> </h1>
-      <h1>total guesses <%= @round.guesses.count %> </h1>
+      <h1>total cards: <%= @round.deck.cards.count %> </h1>
+      <h1>score: <%= @round.score %> </h1>
+      <h1>total guesses: <%= @round.guesses.count %> </h1>
+      <br>
+      <a href="/users/<%=@round.user_id%>">Go Back To Profile</a>
     </div>
   </div>
 <%= erb :"/_footer" %>

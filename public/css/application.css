@@ -354,8 +354,7 @@ hr {
 
 #content
 {
-  float: left;
-  width: 790px;
+  text-align: center;
 }
 
 /*********************************************************************************/
@@ -673,5 +672,17 @@ hr {
   height: 100px;
 }
 
+ul
+{
+    list-style-type: none;
+}
 
+
+#input {
+  display: inline-block;
+  float:left;
+  margin: 10px 0px;
+}
+
+/*Flash Card*/
 

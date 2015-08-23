@@ -1,0 +1,13 @@
+
+
+<%= erb :"/_header" %>
+    <div id="page" class="container">
+    <div id="content">
+      <h1>Your Answer Is: <%=@round.guesses.last.user_guess%></h1>
+        <br>
+       <h1>The Correct Answer Is: <%=@card.answer%></h1>
+        <br>
+        <a href="/rounds/<%=@round.id%>">Next Card</a>
+    </div>
+  </div>
+<%= erb :"/_footer" %>

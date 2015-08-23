@@ -4,20 +4,22 @@
    <div id="title">
       <h1>LOGIN</h1>
     </div>
-    <div id="content">
+    <div>
       <form class ="smart-green" action="/users/login" method='POST'>
-      <ul>
+        <ul>
+            <li>
+
+            <input id="email" type="text" name="user[email]" Placeholder="Email" />
+
+          </li>
           <li>
-          <label for="email">Email</label>
-          <input id="email" type="text" name="user[email]" value="" />
-        </li>
-        <li>
-          <label for="password">Password</label>
-          <input id="password" type="password" name="user[password]" />
-        </li>
-        <br>
-        <input type='submit' value='Login!' />
-      </form>
+
+            <input id="password" type="text" name="user[password]" Placeholder="Password"/>
+
+          </li>
+          <br>
+          <input type='submit' value='register!' />
+        </form>
       <br>
       <br>
       <a href='/users/register'>Don't have an account? Register here!</a>

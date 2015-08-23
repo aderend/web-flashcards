@@ -24,8 +24,13 @@ post "/rounds/:round_id/guesses" do
     end
     @round.save
   end
-  redirect "/rounds/#{@round.id}"
+  redirect "/rounds/#{@round.id}/card/#{@card.id}/answer"
 end
 
+get "/rounds/:round_id/card/:id/answer" do
+  @round = Round.find_by(id: params[:round_id])
+  @card = Card.find_by(id: params[:id])
+  erb :"/cards/answer"
+end
 
 
