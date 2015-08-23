@@ -19,9 +19,8 @@ post "/rounds/:round_id/guesses" do
   if check_card(@guess, @card)
     @guess.update_attributes(correct: true)
 
-    if @round.guesses.find_by(card_id: @card.id) == nil
+    if @round.guesses.find_by(card_id: @card.id, correct: false) == nil
       @round.score += 1
-
     end
     @round.save
   end
