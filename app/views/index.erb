@@ -3,7 +3,7 @@
     <div id="content">
        <h1>Flash Card Game</h1>
         <% @decks.each do |deck| %>
-        <h3><%= deck.name %> : <%= deck.number_of_cards%> made by <%= deck.user_id %> </h3>
+        <h3><%= deck.name %> : made by <%= deck.user_id %> </h3>
         <% end %>
     </div>
   </div>

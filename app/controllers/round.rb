@@ -2,10 +2,9 @@ require 'pry'
 
 get "/rounds/:id" do
   @round = Round.find_by(id: params[:id])
-  @card = new_card(@round)
-  # require 'pry'
-  # binding.pry
-  if game_completed(@round)
+  @card = new_card(@round.id)
+
+  if @card==nil
     erb :"/rounds/stats"
   else
     erb :"/rounds/show"
@@ -17,13 +16,16 @@ post "/rounds/:round_id/guesses" do
   @card = Card.find_by(id: params[:card].to_i)
 
   @guess = Guess.create(user_guess: params[:guess], card_id: @card.id, round_id: @round.id)
-
-  if check_card(@guess, @card) && @round.guesses.find_by(card_id: @card.id) == nil
+  if check_card(@guess, @card)
     @guess.update_attributes(correct: true)
-    @round.score += 1
+
+    if @round.guesses.find_by(card_id: @card.id) == nil
+      @round.score += 1
+
+    end
     @round.save
   end
-  redirect "/rounds/:id"
+  redirect "/rounds/#{@round.id}"
 end
 
 
