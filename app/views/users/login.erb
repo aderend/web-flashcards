@@ -1,3 +1,30 @@
-<div class="container">
+<%= erb :'/_header' %>
 
-</div>
+<div id="page" class="container">
+   <div id="title">
+      <h1>LOGIN</h1>
+    </div>
+    <div>
+      <form class ="smart-green" action="/users/login" method='POST'>
+        <ul>
+            <li>
+
+            <input id="email" type="text" name="user[email]" Placeholder="Email" />
+
+          </li>
+          <li>
+
+            <input id="password" type="text" name="user[password]" Placeholder="Password"/>
+
+          </li>
+          <br>
+          <input type='submit' value='register!' />
+        </form>
+      <br>
+      <br>
+      <a href='/users/register'>Don't have an account? Register here!</a>
+    </div>
+
+  </div>
+
+<%= erb :'/_footer' %>

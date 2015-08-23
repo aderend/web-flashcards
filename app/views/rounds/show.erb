@@ -1,0 +1,13 @@
+<%= erb :"/_header" %>
+    <div id="page" class="container">
+    <div id="content">
+      <h1>Question:</h1>
+        <h1><%= @card.question %></h1>
+        <form action="/rounds/<%= @round.id%>/guesses" method="POST">
+          <input type="text" value="" name="guess" />
+          <input id="card" name="card" type="hidden" value="<%=@card.id%>" />
+          <input value="Submit Answer" type="submit"/>
+        </form>
+    </div>
+  </div>
+<%= erb :"/_footer" %>
