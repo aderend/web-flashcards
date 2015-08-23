@@ -20,7 +20,7 @@
         <li><a href="/users/register">Register</a></li>
         <li><a href="/users/login">Login</a></li>
         <% if session[:user] %>
-        <li><a href="/users/<%=session[:user][:id] %>">Your Profile</a></li>
+        <li><a href="/users">Your Profile</a></li>
         <% else %>
         <li><a href="/users/access_denied" %>Your Profile</a></li>
         <% end %>

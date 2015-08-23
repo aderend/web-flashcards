@@ -4,12 +4,14 @@
     <div id="content">
       <h1>Your Stats</h1>
         <br>
+
       <% @user.rounds.each do |round| %>
         <h3>Deck Name: <%= round.deck.name %></h3>
         <h3>Completed At: <%= round.updated_at %></h3>
         <h3>Total Cards: <%= round.deck.cards.count %></h3>
         <h3>Score: <%= round.score%></h3>
         <br>
+
         <% end %>
       </div>
       <div id="content">

@@ -18,15 +18,15 @@ end
 post '/users/login' do
   if User.auth(params[:user][:email], params[:user][:password])
     session[:user] = User.find_by(email: params[:user][:email])
-    redirect "/users/#{session[:user][:id]}"
+    redirect "/users"
   else
     erb :'users/wrong_info'
   end
 end
 
-get '/users/:id' do
-  @user = User.find_by(id: params[:id])
-  if @user = session[:user]
+get '/users' do
+  if session[:user]
+    @user = User.find_by(id: session[:user][:id])
     erb :'/users/index'
   else
     erb :'users/access_denied'
