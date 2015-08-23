@@ -6,8 +6,9 @@ end
 get "/decks/:id" do
   @deck = Deck.find_by(id: params[:id])
   @round = Round.create(deck_id: params[:id])
-  if session[:user_id]
-    @round.user_id = sessions[:user_id]
+  if session[:user]
+    @round.user = session[:user]
+    @round.save
   end
   erb :"/decks/show"
 end
