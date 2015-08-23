@@ -12,10 +12,3 @@ get "/decks/:id" do
   erb :"/decks/show"
 end
 
-# post "/decks" do
-#   @round = Round.create(deck_id: params[:id])
-#   if session[:user_id]
-#     @round.user_id = sessions[:user_id]
-#   end
-#   redirect "/rounds/#{@round.id}"
-# end
