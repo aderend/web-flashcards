@@ -1,4 +1,6 @@
 <div class="container">
   <h1>display details of the deck: name, number of cards, high score?</h1>
-  <a href="/index/decks/<%=@deck.id%>/rounds/<%=@round.id%>/cards/<%=@card.id%>">Start the Game</a>
+  <form action="/decks/<%=@deck.id%>" method="POST">
+    <input value="Start the Game" type="submit"/>
+  </form>
 </div>
