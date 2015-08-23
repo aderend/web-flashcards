@@ -1,0 +1,13 @@
+<div class="stage">
+  <div class="flashcard">
+    <div class="front">
+      <h1>Question:</h1>
+        <h1><%= @card.question %></h1>
+         <h1>Your Answer Is: <%=@round.guesses.last.user_guess%></h1>
+         <div class="spacer"></div>
+         <h1>The Correct Answer Is: <%=@card.answer%></h1>
+         <div class="spacer"></div>
+         <a href="/rounds/<%=@round.id%>">Next Card</a>
+      </div>
+    </div>
+</div>
