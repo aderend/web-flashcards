@@ -13,6 +13,11 @@
         <% end %>
       </div>
       <div id="content">
+        <%@decks.each do |deck| %>
+          <%= deck.name %>
+          <a href="/decks/<%=deck.id%>">Play the Deck</a>
+        <%end%>
+      <br>
       <br>
       <a href="/users/<%= session[:user][:id] %>/logout">Logout</a>
     </div>

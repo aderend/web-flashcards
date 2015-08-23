@@ -1,4 +1,3 @@
-
 get "/decks" do
   @decks = Deck.all
   erb :'/decks/index'
@@ -10,6 +9,9 @@ get "/decks/:id" do
 end
 
 post "/decks/:id" do
-  @round = Round.create(deck_id: params[:id], user_id: current_user.id)
+  @round = Round.create(deck_id: params[:id])
+  if sessions[:user_id]
+    @round.user_id = sessions[:user_id]
+  end
   redirect "/rounds/#{@round.id}"
 end
