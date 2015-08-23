@@ -26,6 +26,8 @@ end
 
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
+  @decks = Deck.all
+  # @deck_rounds = Round.find_by(user_id: @user.id).where()
   if @user = session[:user]
     erb :'/users/index'
   else

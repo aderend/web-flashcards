@@ -5,6 +5,7 @@ get "/rounds/:id" do
   @card = new_card(@round.id)
 
   if @card==nil
+
     erb :"/rounds/stats"
   else
     erb :"/rounds/show"
