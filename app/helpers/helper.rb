@@ -27,3 +27,7 @@ end
   def game_completed(round)
     round.guesses.select {|guess| guess.correct == true}.length == round.deck.cards.count
   end
+
+def logged_in?
+  session[:user] ? true : false
+end

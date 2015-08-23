@@ -1,0 +1,12 @@
+<div id="page" class="container">
+  <h1>Edit Card</h1>
+  <form action="/cards/<%=@card.id%>" method="POST">
+    <input type="hidden" name="_method" value="PUT" />
+    <%= erb :"cards/_form", locals: { card: @card} %>
+    <input type="submit" value="Save" />
+  </form>
+  <form action="/cards/<%=@card.id%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="DELETE" />
+  </form>
+</div>

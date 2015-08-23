@@ -1,0 +1,12 @@
+<div id="page" class="container">
+  <h1>Edit Deck</h1>
+  <form action="/decks/<%=@deck.id%>" method="POST">
+    <input type="hidden" name="_method" value="PUT" />
+    <%= erb :"decks/_form", locals: { deck: @deck} %>
+    <input type="submit" value="Save" />
+  </form>
+  <form action="/decks/<%=@deck.id%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="DELETE" />
+  </form>
+</div>

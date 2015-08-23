@@ -1,10 +1,9 @@
-    <div id="page" class="container">
-    <div id="content">
-      <h1>You are playing the deck: <%=@deck.name %></h1>
-       <!--  <form action="/decks" method="POST">
-        <input value="Start the Game" type="submit"/>
-        </form> -->
-        <a href='/rounds/<%=@round.id%>'>Start the Game</a>
-    </div>
+<div id="page" class="container">
+  <div id="content">
+    <h1>You are playing the deck: <%=@deck.name %></h1>
+      <form action="/decks/<%=@deck.id%>" method="POST">
+      <input value="Start the Game" type="submit"/>
+      </form>
   </div>
+</div>
 
