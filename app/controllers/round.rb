@@ -8,7 +8,7 @@ get "/rounds/:id" do
 
     erb :"/rounds/stats"
   else
-    erb :"/rounds/show"
+    erb :"/rounds/question"
   end
 end
 
@@ -31,7 +31,7 @@ end
 get "/rounds/:round_id/card/:id/answer" do
   @round = Round.find_by(id: params[:round_id])
   @card = Card.find_by(id: params[:id])
-  erb :"/cards/answer"
+  erb :"/rounds/answer"
 end
 
 

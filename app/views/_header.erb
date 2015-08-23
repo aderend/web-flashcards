@@ -17,12 +17,12 @@
     <div id="menu" class="container">
       <ul>
         <li class="current_page_item"><a href="/">Home</a></li>
-        <% if !!session[:user_id] %>
-          <li><a href="/users/register">Register</a></li>
-          <li><a href="/users/login">Login</a></li>
-        <%else%>
+        <% if session[:user] %>
           <li><a href="/users/<%= session[:user][:id] %>">Your Profile</a></li>
           <li><a href="/users/<%= session[:user][:id] %>/logout">Log Out</a></li>
+        <%else%>
+          <li><a href="/users/register">Register</a></li>
+          <li><a href="/users/login">Login</a></li>
         <%end%>
 
       </ul>
