@@ -5,6 +5,7 @@ user.decks << deck1
 
 deck1.cards << Card.create(question: "What's 1+1", answer: "2")
 deck1.cards << Card.create(question: "What's 2+2", answer: "4")
+deck1.cards << Card.create(question: "What's 4+4", answer: "8")
 
 # round1 = Round.create(deck_id: 1, user_id: 1)
 # guess1 = Guess.create(card_id: 1, user_id: 1, user_guess: "apple")
