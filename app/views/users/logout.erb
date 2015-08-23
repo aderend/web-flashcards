@@ -1,0 +1,14 @@
+
+<%= erb :'/_header' %>
+<div id="page" class="container">
+    <div id="content">
+      <h1><%= @user.name %>, Are you sure you want to log out?</h1>
+      <br>
+      <form action="/users/<%= @user.id %>/logout" method='POST'>
+        <input type='submit' value='log out!' />
+      </form>
+      <br>
+      <a href="/users/<%= @user.id %>">Go Back</a>
+    </div>
+</div>
+<%= erb :'/_footer' %>

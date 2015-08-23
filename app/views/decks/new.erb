@@ -1,7 +1,9 @@
-<div class="container">
+<%= erb :'/_header' %>
+<div id="page" class="container">
   <h1>Create A New Deck</h1>
-  <form action="/users/<%=@user.id%>/decks" method="POST">
+  <form class ="smart-green" action="/decks" method="POST">
     <%= erb :"decks/_form", locals: { deck: @deck, card: @card} %>
     <input type="submit" value="Save" />
   </form>
 </div>
+<%= erb :'/_footer' %>

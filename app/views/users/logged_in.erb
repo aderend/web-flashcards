@@ -1,0 +1,9 @@
+  <%= erb :"/_header" %>
+  <div id="page" class="container">
+    <div id="content">
+      <h1>You Are Already Logged In</h1>
+      <br>
+      <a href='/users/<%=session[:user][:id]%>'>Go to your profile</a>
+    </div>
+  </div>
+  <%= erb :"/_footer" %>
