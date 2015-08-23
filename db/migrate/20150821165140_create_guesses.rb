@@ -4,6 +4,7 @@ class CreateGuesses < ActiveRecord::Migration
       t.integer :card_id
       t.integer :round_id
       t.string :user_guess, limit: 50
+      t.boolean :correct, default: false
 
       t.timestamps null: false
     end
