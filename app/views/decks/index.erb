@@ -1,13 +1,15 @@
 <div id="page" class="container">
     <div id="content">
        <h1>Flash Card Game</h1>
-       <br>
+       <div class="spacer"></div>
         <% @decks.each do |deck| %>
-        <h3><%= deck.name %> </a></h3>
+        <h3><%= deck.name %> by <%= @users.find_by(id: deck.creator_id).name %></a></h3>
         <a href="/decks/<%= deck.id%>">Play</a>
+        <% if session[:user]%>
         <a href="/decks/<%= deck.id%>/edit">Edit</a>
+        <% end %>
         <div class="spacer"></div>
-        <br>
+        <div class="spacer"></div>
         <% end %>
     </div>
   </div>

@@ -30,14 +30,10 @@
     </div>
     <!-- end #menu -->
   <div id="header-wrapper">
-    <div id="header" class="container">
-      <div id="logo">
         <% if session[:user] %>
-<h1><%= "Hello, " + session[:user][:name] %></h1>
+<h1><%= "Hi " + session[:user][:name] + " ,this is flashcards" %></h1>
 <% else %>
-<h1><%= "Hello, Player" %></h1>
+<h1><%= "Hi, this is flashcards" %></h1>
 <%end%>
-      </div>
-    </div>
   </div>
-  </div>
+</div>

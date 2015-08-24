@@ -3,7 +3,7 @@
     <div id="page" class="container">
     <div id="content">
       <h1>Your Stats</h1>
-        <br>
+        <div class="spacer"></div>
 
       <% @user.rounds.each do |round| %>
         <% next if round.deck == nil%>
@@ -12,7 +12,7 @@
         <h3>Completion Date: <%= round.updated_at.to_s[0..9] %></h3>
         <h3>Total Cards: <%= round.deck.cards.count %></h3>
         <h3>Score: <%= round.score%></h3>
-        <br>
+        <div class="spacer"></div>
         </div>
         <% end %>
       </div>

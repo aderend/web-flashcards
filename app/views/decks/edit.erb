@@ -1,23 +1,30 @@
 <div id="page" class="container">
+<div class="smart-green">
   <h1>Edit Deck</h1>
   <div class="spacer"></div>
   <h2><%= @deck.name %></h2>
-  <div class="spacer"></div>
+  
   <% @deck.cards.each do |card| %>
-  <p>Question: <%=card.question%></p>
-  <p>Answer: <%=card.answer%></p>
-  <a href="/cards/<%=card.id%>/edit">Edit</a>
+  <div class="flashcard">
+  <div class="front">
+  <h2>Question: <%=card.question%></h2>
   <div class="spacer"></div>
+  <h2>Answer: <%=card.answer%></h2>
+    <div class="spacer"></div>
+  <h2><a href="/cards/<%=card.id%>/edit">Edit Card</a></h2>
+  </div>
+  </div>
+
   <%end%>
+  <form action="/decks/<%=@deck.id%>/edit" method="POST">
+    <input type="submit" value="Add New Cards" />
+  </form>
  <div class="spacer"></div>
   <form action="/decks/<%=@deck.id%>/edit" method="POST">
     <input type="hidden" name="_method" value="DELETE" />
     <input type="submit" value="Delete Deck!" />
   </form>
   <div class="spacer"></div>
-  <form action="/decks/<%=@deck.id%>/edit" method="POST">
-    <input type="submit" value="Add New Cards" />
-  </form>
-  <div class="spacer"></div>
-  <a href="/decks">Go back to all decks<a/>
+  <a href="/decks">Go back to all decks</a>
+</div>
 </div>
