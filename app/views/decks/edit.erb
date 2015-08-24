@@ -1,0 +1,23 @@
+<div id="page" class="container">
+  <h1>Edit Deck</h1>
+  <div class="spacer"></div>
+  <h2><%= @deck.name %></h2>
+  <div class="spacer"></div>
+  <% @deck.cards.each do |card| %>
+  <p>Question: <%=card.question%></p>
+  <p>Answer: <%=card.answer%></p>
+  <a href="/cards/<%=card.id%>/edit">Edit</a>
+  <div class="spacer"></div>
+  <%end%>
+ <div class="spacer"></div>
+  <form action="/decks/<%=@deck.id%>/edit" method="POST">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="Delete Deck!" />
+  </form>
+  <div class="spacer"></div>
+  <form action="/decks/<%=@deck.id%>/edit" method="POST">
+    <input type="submit" value="Add New Cards" />
+  </form>
+  <div class="spacer"></div>
+  <a href="/decks">Go back to all decks<a/>
+</div>

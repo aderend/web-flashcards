@@ -1,0 +1,21 @@
+<div id="page" class="container">
+  <h1>Edit Card</h1>
+  <form class ="smart-green" action="/cards/<%=@card.id%>/edit" method="POST">
+      <ul>
+        <li>
+        <label for="card_question">Question:</label>
+        <textarea row=5 col=40 id="card_question" type="text" name="card[question]"><%= @card.question %></textarea>
+      </li>
+      <li>
+        <label for="card_answer">Answer:</label>
+        <textarea row=5 col=40 id="card_answer" type="text" name="card[answer]" ><%= @card.answer %></textarea>
+      </li>
+    </ul>
+    <input name="_method" type="hidden" value="PUT" />
+    <input type="submit" value="Edit" />
+  </form>
+  <form action="/cards/<%=@card.id%>/edit" method="POST">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="Delete Card" />
+  </form>
+</div>

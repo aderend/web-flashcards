@@ -25,10 +25,8 @@ post '/users/login' do
 end
 
 get '/users/:id' do
-  @user = User.find_by(id: params[:id])
-  @decks = Deck.all
-  # @deck_rounds = Round.find_by(user_id: @user.id).where()
-  if @user = session[:user]
+ if session[:user]
+    @user = User.find_by(id: session[:user][:id])
     erb :'/users/index'
   else
     erb :'users/access_denied'

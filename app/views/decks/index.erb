@@ -1,10 +1,12 @@
-
-    <div id="page" class="container">
+<div id="page" class="container">
     <div id="content">
        <h1>Flash Card Game</h1>
        <br>
         <% @decks.each do |deck| %>
-        <h3><a href="/decks/<%= deck.id%>"><%= deck.name %>: made by <%= deck.user_id %> </a></h3>
+        <h3><%= deck.name %> </a></h3>
+        <a href="/decks/<%= deck.id%>">Play</a>
+        <a href="/decks/<%= deck.id%>/edit">Edit</a>
+        <div class="spacer"></div>
         <br>
         <% end %>
     </div>

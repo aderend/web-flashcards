@@ -355,6 +355,7 @@ hr {
 #content
 {
   text-align: center;
+  min-height: 250px;
 }
 
 /*********************************************************************************/
@@ -686,11 +687,9 @@ ul
 }
 
 /*Flash Card*/
-.stage {
- -webkit-perspective: 1000;                   /* Sets up your viewpoint for seeing the animation */
-}
 
 .flashcard {
+  vertical-align: middle;
   height: 300px;
   width: 500px;
   margin: 10% auto;                                              /* Centers the flashcard on the page */
@@ -706,19 +705,19 @@ ul
   -webkit-transform: rotateX(180deg);                      /* Rotates flashcard div when applied */
 }
 
-.front, .back {
-  position: absolute;
-  -webkit-backface-visibility: hidden;           /*  Hides back side of text (it's upside down) */
-  height: 300px;                                   /* Stretches side to inhabit full size of flashcard */
-  width: 500px;
+.front {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   text-align: center;
 }
 
-.front p, .back p {
-  margin-top: 25%;
-  font-size: 3em;
-}
 
 .spacer {
   height: 10px;
+}
+
+.stat_wrapper {
+  margin-left:38%;
+  text-align: left;
 }

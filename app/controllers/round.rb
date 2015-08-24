@@ -3,9 +3,7 @@ require 'pry'
 get "/rounds/:id" do
   @round = Round.find_by(id: params[:id])
   @card = new_card(@round.id)
-
   if @card==nil
-
     erb :"/rounds/stats"
   else
     erb :"/rounds/question"
