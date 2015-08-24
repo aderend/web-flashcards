@@ -7,14 +7,19 @@
 
       <% @user.rounds.each do |round| %>
         <% next if round.deck == nil%>
+        <div class="stat_wrapper">
         <h3>Deck Name: <%= round.deck.name %></h3>
-        <h3>Completed At: <%= round.updated_at %></h3>
+        <h3>Completion Date: <%= round.updated_at.to_s[0..9] %></h3>
         <h3>Total Cards: <%= round.deck.cards.count %></h3>
         <h3>Score: <%= round.score%></h3>
         <br>
+        </div>
         <% end %>
       </div>
+
+
         <div id="content">
+      <a href="/decks/new">Make a new deck</a>
           <div class="spacer"></div>
       <a href="/users/<%= session[:user][:id] %>/logout">Logout</a>
     </div>

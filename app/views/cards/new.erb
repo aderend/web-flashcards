@@ -1,0 +1,20 @@
+
+<div id="page" class="container">
+  <h1>Create Card</h1>
+
+  <form class ="smart-green" action="/decks/<%= @deck.id %>/cards/new" method="POST">
+      <ul>
+        <li>
+        <label for="card_question">Question:</label>
+        <textarea row=5 col=40 id="card_question" type="text" name="card[question]" value="<%= @card.question %>"></textarea>
+      </li>
+      <li>
+        <label for="card_answer">Answer:</label>
+        <textarea row=5 col=40 id="card_answer" type="text" name="card[answer]" value="<%= @card.answer %>"></textarea>
+      </li>
+    </ul>
+    <input type="submit" value="Add a New Card" />
+  </form>
+  <a href="/decks/<%=@deck.id%>/edit" >Finish and go back deck </a>
+</div>
+

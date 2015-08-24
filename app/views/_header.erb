@@ -18,6 +18,7 @@
       <ul>
         <li class="current_page_item"><a href="/">Home</a></li>
         <% if session[:user] %>
+          <li><a href="/decks/new">Make Deck</a></li>
           <li><a href="/users/<%= session[:user][:id] %>">Your Profile</a></li>
           <li><a href="/users/<%= session[:user][:id] %>/logout">Log Out</a></li>
         <%else%>

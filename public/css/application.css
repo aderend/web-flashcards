@@ -716,3 +716,8 @@ ul
 .spacer {
   height: 10px;
 }
+
+.stat_wrapper {
+  margin-left:38%;
+  text-align: left;
+}

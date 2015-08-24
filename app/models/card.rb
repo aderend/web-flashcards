@@ -3,5 +3,4 @@ class Card < ActiveRecord::Base
   has_many :guesses
 
   validates_presence_of :question, :answer
-  validates_uniqueness_of :question
 end
