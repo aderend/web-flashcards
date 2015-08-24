@@ -226,11 +226,12 @@ hr {
 
 #header-wrapper
 {
+
   overflow: hidden;
-  background: url(images/bg01.png) repeat;
-  background-size: 100%;
-  padding: 6em 0em 2em 0em;
-  background: #BCF1ED;;
+  text-align: center;
+  padding-top: 10px;
+  height: 50px;
+  background: #BCF1ED;
 }
 
 
@@ -561,7 +562,7 @@ hr {
     color: #B1B1B1;
   }
 
-  #box1
+  .box1
   {
     float: left;
     width: 354px;
@@ -604,12 +605,12 @@ hr {
     display: block;
     margin: -30px -30px 10px -30px;
     color: #FFF;
-    background: #9DC45F;
-    text-shadow: 1px 1px 1px #949494;
+    background: #6B949F;
+    text-shadow: 1px 1px 1px #6B949F;
     border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
     -moz-border-radius: 5px 5px 0px 0px;
-    border-bottom:1px solid #89AF4C;
+    border-bottom:1px;
 
 }
 .smart-green h1>span {
@@ -627,7 +628,7 @@ hr {
     margin-top: 10px;
     color: #5E5E5E;
 }
-.smart-green input[type="text"], .smart-green input[type="email"], .smart-green textarea, .smart-green select {
+.smart-green input[type="text"], .smart-green input[type="email"], .smart-green input[type="password"], .smart-green textarea, .smart-green select {
     color: #555;
     height: 30px;
     line-height:15px;

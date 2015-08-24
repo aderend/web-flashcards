@@ -1,6 +1,7 @@
 <div id="page" class="container">
-  <h1>Create A New Deck</h1>
+  
   <form class ="smart-green" action="/decks/new" method="POST">
+  <h1>Create A New Deck</h1>
     <%= erb :"decks/_form", locals: { deck: @deck} %>
     <div class='spacer'></div>
     <input type="submit" value="Make New Deck" />
