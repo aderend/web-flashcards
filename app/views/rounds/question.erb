@@ -3,13 +3,17 @@
     <div class="front">
       <h1>Question:</h1>
         <h1><%= @card.question %></h1>
-          <form action="/rounds/<%= @round.id%>/guesses" method="POST">
+          <form class="question" action="/rounds/<%= @round.id%>/guesses" method="POST">
           <div class="spacer"></div>
           <input type="text" value="" name="guess" />
           <div class="spacer"></div>
           <input id="card" name="card" type="hidden" value="<%=@card.id%>" />
-          <input class="submit_answer" value="Submit Answer" type="submit"/>
+          <input value="Submit Answer" type="submit"/>
         </form>
+      </div>
+
+      <div class="back">
+
       </div>
     </div>
 

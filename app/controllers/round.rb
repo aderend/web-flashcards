@@ -29,7 +29,7 @@ end
 get "/rounds/:round_id/card/:id/answer" do
   @round = Round.find_by(id: params[:round_id])
   @card = Card.find_by(id: params[:id])
-  erb :"/rounds/answer"
+  erb :"/rounds/answer", :layout => !request.xhr?
 end
 
 

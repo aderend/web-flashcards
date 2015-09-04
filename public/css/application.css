@@ -356,7 +356,7 @@ hr {
 #content
 {
   text-align: center;
-  min-height: 250px;
+  min-height: 400px;
 }
 
 /*********************************************************************************/
@@ -689,8 +689,11 @@ ul
 
 /*Flash Card*/
 
+.stage {
+ -webkit-perspective: 1000;                   /* Sets up your viewpoint for seeing the animation */
+}
+
 .flashcard {
-  vertical-align: middle;
   height: 300px;
   width: 500px;
   margin: 10% auto;                                              /* Centers the flashcard on the page */
@@ -698,7 +701,7 @@ ul
   box-shadow: 2px 2px 2px #000;
   -webkit-transform-style: preserve-3d;                                 /* Provides 3D perspective. */
   transition: all 0.3s;                                /* Slows down any transitions (e.g. rotation) */
-  -webkit-transition: all 0.3s;
+  -webkit-transition: all 0.5s;
 }
 
 .flipped, .back {
@@ -706,19 +709,15 @@ ul
   -webkit-transform: rotateX(180deg);                      /* Rotates flashcard div when applied */
 }
 
-.front {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.front, .back {
+  position: absolute;
+  -webkit-backface-visibility: hidden;           /*  Hides back side of text (it's upside down) */
+  height: 300px;                                   /* Stretches side to inhabit full size of flashcard */
+  width: 500px;
   text-align: center;
 }
 
-
-.spacer {
-  height: 10px;
-}
-
-.stat_wrapper {
-  margin-left:38%;
-  text-align: left;
+.front p, .back p {
+  margin-top: 25%;
+  font-size: 3em;
 }
