@@ -4,10 +4,10 @@
     <div id="menu" class="container">
       <ul>
         <li class="current_page_item"><a href="/">Home</a></li>
-        <% if session[:user] %>
+        <% if session[:user_id] %>
           <li><a href="/decks/new">Make Deck</a></li>
-          <li><a href="/users/<%= session[:user][:id] %>">Your Profile</a></li>
-          <li><a href="/users/<%= session[:user][:id] %>/logout">Log Out</a></li>
+          <li><a href="/users/<%= session[:user_id] %>">Your Profile</a></li>
+          <li><a href="/users/<%= session[:user_id] %>/logout">Log Out</a></li>
         <%else%>
           <li><a href="/users/register">Register</a></li>
           <li><a href="/users/login">Login</a></li>
@@ -17,8 +17,8 @@
     </div>
     <!-- end #menu -->
   <div id="header-wrapper">
-        <% if session[:user] %>
-<h1><%= "Hi " + session[:user][:name] + " ,this is flashcards" %></h1>
+        <% if session[:user_id] %>
+<h1><%= "Hi " + User.find_by(id: session[:user_id]).name + ", this is flashcards" %></h1>
 <% else %>
 <h1><%= "Hi, this is flashcards" %></h1>
 <%end%>
