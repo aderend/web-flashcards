@@ -1,7 +1,7 @@
 
 
 def current_user
-  user = session[:user] || nil
+  user = session[:user_id] || nil
 end
 
   def new_card(round_id)

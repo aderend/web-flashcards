@@ -13,8 +13,8 @@ get "/decks/:id" do
   @deck = Deck.find_by(id: params[:id])
   @round = Round.create(deck_id: params[:id])
   @creator = User.find_by(id: @deck.creator_id)
-  if session[:user]
-    @round.user = session[:user]
+  if session[:user_id]
+    @round.user = User.find_by(id: session[:user_id])
     @round.save
   end
   erb :"/decks/show"
@@ -22,7 +22,7 @@ end
 
 post "/decks/new" do
   @deck = Deck.new(params[:deck])
-  @deck.creator_id = session[:user][:id]
+  @deck.creator_id = session[:user_id]
   if @deck.save
     redirect "/decks/#{@deck.id}/cards/new"
   else
@@ -33,7 +33,7 @@ end
 get "/decks/:id/edit" do
      @deck = Deck.find_by(id: params[:id])
 
-    if session[:user][:id] == @deck.creator_id
+    if session[:user_id] == @deck.creator_id
       erb :"/decks/edit"
     else
       erb :"/decks/access_denied"

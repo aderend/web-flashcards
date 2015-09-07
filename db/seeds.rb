@@ -1,10 +1,11 @@
 
 deck1 = Deck.create(name: 'math', creator_id: 1)
-user1 = User.create(name: 'Derpson', email: 'derp@derp.com', password:  'foo')
+user1 = User.create(name: 'Derpson', username: 'derpson', password:  'foo')
 
 deck1.cards << Card.create(question: "What's 1+1", answer: "2")
 deck1.cards << Card.create(question: "What's 2+2", answer: "4")
 deck1.cards << Card.create(question: "What's 4+4", answer: "8")
+deck1.cards << Card.create(question: "What's 5+5", answer: "10")
 
 
 

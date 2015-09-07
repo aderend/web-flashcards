@@ -1,28 +1,48 @@
 <div id="page" class="container">
-   <div id="title">
-      
-    </div>
-    <div>
-      <form class ="smart-green" action="/users/login" method='POST'>
-      <h1>LOGIN</h1>
-        <ul>
-            <li>
-
-            <input id="email" type="email" name="user[email]" Placeholder="Email" />
-
-          </li>
-          <div class="spacer"></div>
-          <li>
-
-            <input id="password" type="password" name="user[password]" Placeholder="Password"/>
-
-          </li>
-          <div class="spacer"></div>
-          <input type='submit' value='Login!' />
-          <a href='/users/register'>Don't have an account? Register here!</a>
-        </form>
-    </div>
-
-  </div>
-
-
+    <form id="login" class ="smart-green" action="/users/login" method='POST'>
+     <h1>Login</h1>
+     <ul>
+      <li>
+        <label>username</label>
+        <input id="username" type="text" name="user[username]" />
+      </li>
+      <li>
+        <label>password</label>
+        <input id="password" type="password" name="user[password]" />
+      </li>
+      <div class="spacer"></div>
+      <li>
+        <input id="login"type='submit' value='login' />
+      </li>
+      <div class="spacer"></div>
+      <li class="error">
+          <%= flash[:login_error] %>
+      </li>
+    </ul>
+  </form>
+</div>
+<div id="page" class="container">
+  <form id="register" class ="smart-green" action="/users/register" method='POST'>
+     <h1>Create Account</h1>
+     <ul>
+      <label>name</label>
+        <input id="name" type="text" name="user[name]" />
+      </li>
+      <li>
+        <label>username</label>
+        <input id="username" type="text" name="user[username]" />
+      </li>
+      <li>
+        <label>password</label>
+        <input id="password" type="password" name="user[password]" />
+      </li>
+      <li>
+        <div class="spacer"></div>
+        <input id='register' type='submit' value='create account' />
+      </li>
+      <li class="error">
+        <%= flash[:register_error] %>
+      </li>
+    </ul>
+  </form>
+</div>

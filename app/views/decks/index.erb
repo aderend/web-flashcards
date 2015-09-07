@@ -5,7 +5,7 @@
         <% @decks.each do |deck| %>
         <h3><%= deck.name %> by <%= @users.find_by(id: deck.creator_id).name %></a></h3>
         <a href="/decks/<%= deck.id%>">Play</a>
-        <% if session[:user]%>
+        <% if session[:user_id]%>
         <a href="/decks/<%= deck.id%>/edit">Edit</a>
         <% end %>
         <div class="spacer"></div>

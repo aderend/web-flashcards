@@ -1,9 +1,10 @@
 post '/users/register' do
   @user = User.new(params[:user])
   if @user.save
-    session[:user] = @user
-    redirect "/users/#{session[:user][:id]}"
+    session[:user_id] = @user.id
+    redirect "/users/#{@user.id}"
   else
+    flash[:register_error] = "Username Taken or Invalid Password."
     redirect 'users/login'
   end
 end
@@ -15,17 +16,17 @@ end
 post '/users/login' do
   @user = User.find_by(username: params[:user][:username]).try(:authenticate, params[:user][:password])
   if @user
-    session[:user] = @user
-    redirect "/users/#{session[:user][:id]}"
+    session[:user_id] = @user.id
+    redirect "/users/#{@user.id}"
   else
-    flash[:error] = "Wrong Username or Password"
+    flash[:login_error] = "Wrong Username or Password."
     redirect 'users/login'
   end
 end
 
 get '/users/:id' do
-  if session[:user]
-    @user = User.find_by(id: session[:user][:id])
+  if session[:user_id]
+    @user = User.find_by(id: session[:user_id])
     erb :'/users/index'
   else
     erb :'users/login'

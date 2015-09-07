@@ -346,6 +346,7 @@ hr {
 #page
 {
   height: 80%;
+  min-height: 400px;
   position: relative;
   overflow: hidden;
   padding: 6em 0em 5em 0em;
@@ -356,7 +357,6 @@ hr {
 #content
 {
   text-align: center;
-  min-height: 400px;
 }
 
 /*********************************************************************************/
@@ -720,4 +720,8 @@ ul
 .front p, .back p {
   margin-top: 25%;
   font-size: 3em;
+}
+
+.error {
+  color:red;
 }
