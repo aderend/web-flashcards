@@ -21,9 +21,10 @@ end
   end
 
   def check_card(guess, card)
-    guess.user_guess == card.answer
+    guess.user_guess.downcase == card.answer.downcase
   end
 
   def game_completed(round)
     round.guesses.select {|guess| guess.correct == true}.length == round.deck.cards.count
   end
+
