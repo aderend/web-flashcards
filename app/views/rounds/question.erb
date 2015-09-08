@@ -1,6 +1,7 @@
 
   <div class="flashcard">
     <div class="front">
+    <div class="card_margin"></div>
       <h1>Question:</h1>
         <h1><%= @card.question %></h1>
           <form class="question" action="/rounds/<%= @round.id%>/guesses" method="POST">
@@ -11,9 +12,6 @@
           <input value="Submit Answer" type="submit"/>
         </form>
       </div>
-
-      <div class="back">
-
-      </div>
+      <div class="back"></div>
     </div>
 

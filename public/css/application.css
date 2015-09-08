@@ -725,3 +725,15 @@ ul
 .error {
   color:red;
 }
+
+.spacer {
+  height: 0.5em;
+}
+
+.card_margin {
+  height: 1.5em;
+}
+.next {
+  font-size: 1.5em;
+}
+
